@@ -131,3 +131,35 @@ popup.addEventListener("click", function(event) {
         closePopup();
     }
 });
+let currentType = "note";
+
+function selectType(type) {
+    currentType = type;
+
+    const input = document.getElementById("messageInput");
+
+    if (type === "letter") {
+        input.placeholder = "write everything you couldn't fit in a text... 💌";
+    } else {
+        input.placeholder = "type your tiny little yap here... 🌷";
+    }
+}
+
+async function sendCurrentMessage() {
+
+    const input = document.getElementById("messageInput");
+    const content = input.value.trim();
+
+    if (!content) {
+        alert("ummm... you sent literally nothing 😭");
+        return;
+    }
+
+    // Change this later when we add the real login
+    const sender = "you";
+
+    await sendMessage(sender, currentType, content);
+
+    input.value = "";
+    closePopup();
+}
