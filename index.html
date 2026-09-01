@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>athulcoded ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating decorations -->
+    <div class="decor flower1">🌷</div>
+    <div class="decor flower2">🌱</div>
+    <div class="decor bubble">🫧</div>
+    <div class="decor swan">🦢</div>
+
+    <div class="page">
+
+        <!-- HEADER -->
+        <header>
+            <div class="tiny-label">our little corner of the internet</div>
+
+            <h1>athulcoded <span>♡</span></h1>
+
+            <p class="subtitle">a very important website for very unserious people</p>
+        </header>
+
+
+        <!-- WELCOME CARD -->
+        <section class="welcome-card">
+
+            <div class="welcome-top">
+                <span>🌷</span>
+                <span>hey athul :)</span>
+            </div>
+
+            <p>
+                you have a little something waiting for you 💌
+            </p>
+
+            <button class="main-button" onclick="leaveSomething()">
+                leave something for athul ♡
+            </button>
+
+        </section>
+
+
+        <!-- YOUR STUFF -->
+        <section class="section">
+
+            <div class="section-title">
+                <h2>little things ˚₊‧</h2>
+                <span>✦</span>
+            </div>
+
+            <div class="cards">
+
+                <div class="card" onclick="openSection('notes')">
+                    <div class="emoji">🌷</div>
+                    <h3>little notes</h3>
+                    <p>tiny things I wanted to tell you</p>
+                </div>
+
+                <div class="card" onclick="openSection('letters')">
+                    <div class="emoji">💌</div>
+                    <h3>letters</h3>
+                    <p>for when I have too much to say</p>
+                </div>
+
+                <div class="card" onclick="openSection('memories')">
+                    <div class="emoji">📸</div>
+                    <h3>memories</h3>
+                    <p>our random little moments</p>
+                </div>
+
+                <div class="card" onclick="openSection('voice')">
+                    <div class="emoji">🎙️</div>
+                    <h3>voice notes</h3>
+                    <p>hear me yap</p>
+                </div>
+
+                <div class="card" onclick="openSection('videos')">
+                    <div class="emoji">🎥</div>
+                    <h3>our videos</h3>
+                    <p>us being us</p>
+                </div>
+
+                <div class="card special" onclick="randomMemory()">
+                    <div class="emoji">🫧</div>
+                    <h3>random memory</h3>
+                    <p>surprise me</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT -->
+        <section class="recent">
+
+            <div class="section-title">
+                <h2>recently ˚₊‧</h2>
+                <span>♡</span>
+            </div>
+
+            <div class="recent-box">
+
+                <div class="activity">
+                    <span class="activity-icon">🌷</span>
+
+                    <div>
+                        <strong>athul left you a little note</strong>
+                        <small>just now</small>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <span class="activity-icon">📸</span>
+
+                    <div>
+                        <strong>you added a memory</strong>
+                        <small>yesterday</small>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <span class="activity-icon">🎙️</span>
+
+                    <div>
+                        <strong>athul sent a voice note</strong>
+                        <small>2 days ago</small>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <span class="activity-icon">💌</span>
+
+                    <div>
+                        <strong>you left a letter</strong>
+                        <small>3 days ago</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RANDOM FOOTER -->
+        <footer>
+
+            <p>made with questionable amounts of love ♡</p>
+
+            <button onclick="ragebait()">
+                don't click this
+            </button>
+
+        </footer>
+
+    </div>
+
+
+    <!-- POPUP -->
+    <div id="popup" class="popup hidden">
+
+        <div class="popup-content">
+
+            <button class="close" onclick="closePopup()">×</button>
+
+            <div id="popupEmoji">💌</div>
+
+            <h2 id="popupTitle">hello</h2>
+
+            <p id="popupText">
+                something goes here
+            </p>
+
+            <button class="popup-button" onclick="closePopup()">
+                okay fine
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
