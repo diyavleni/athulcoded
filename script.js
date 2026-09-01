@@ -1,3 +1,10 @@
+const SUPABASE_URL = "PASTE_YOUR_API_URL_HERE";
+const SUPABASE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+
+const supabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
 const popup = document.getElementById("popup");
 const popupEmoji = document.getElementById("popupEmoji");
 const popupTitle = document.getElementById("popupTitle");
