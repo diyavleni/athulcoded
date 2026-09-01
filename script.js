@@ -163,3 +163,33 @@ async function sendCurrentMessage() {
     input.value = "";
     closePopup();
 }
+async function login() {
+    const email = document.getElementById("emailInput").value.trim();
+    const password = document.getElementById("passwordInput").value;
+
+    const message = document.getElementById("loginMessage");
+
+    if (!email || !password) {
+        message.textContent = "ummm... you forgot something 😭";
+        return;
+    }
+
+    message.textContent = "logging you in... 👀";
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+        console.error(error);
+        message.textContent = "wrong email or password bestie 😭";
+        return;
+    }
+
+    message.textContent = "welcome back ♡";
+
+    document.getElementById("loginSection").style.display = "none";
+
+    alert("you're in 💌");
+}
