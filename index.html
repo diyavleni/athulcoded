@@ -165,25 +165,47 @@
 
 
     <!-- POPUP -->
-    <div id="popup" class="popup hidden">
+<div id="popup" class="popup hidden">
 
-        <div class="popup-content">
+    <div class="popup-content">
 
-            <button class="close" onclick="closePopup()">×</button>
+        <button class="close" onclick="closePopup()">×</button>
 
-            <div id="popupEmoji">💌</div>
+        <div id="popupEmoji">💌</div>
 
-            <h2 id="popupTitle">hello</h2>
+        <h2 id="popupTitle">leave something</h2>
 
-            <p id="popupText">
-                something goes here
-            </p>
+        <p id="popupText">what are we sending? 👀</p>
 
-            <button class="popup-button" onclick="closePopup()">
-                okay fine
+        <div id="composeArea">
+
+            <textarea
+                id="messageInput"
+                placeholder="type your little yap here..."
+                maxlength="5000">
+            </textarea>
+
+            <div class="type-buttons">
+
+                <button onclick="selectType('note')">
+                    🌷 note
+                </button>
+
+                <button onclick="selectType('letter')">
+                    💌 letter
+                </button>
+
+            </div>
+
+            <button class="popup-button" onclick="sendCurrentMessage()">
+                send it ♡
             </button>
 
         </div>
+
+    </div>
+
+</div>
 
     </div>
 
