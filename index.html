@@ -30,22 +30,34 @@
 
 
         <!-- WELCOME CARD -->
-        <section class="welcome-card">
+        <section class="welcome-card" id="loginSection">
 
-            <div class="welcome-top">
-                <span>🌷</span>
-                <span>hey athul :)</span>
-            </div>
+    <div class="welcome-top">
+        <span>🌷</span>
+        <span>hey you :)</span>
+    </div>
 
-            <p>
-                you have a little something waiting for you 💌
-            </p>
+    <p>sign in to enter our little corner of the internet 💌</p>
 
-            <button class="main-button" onclick="leaveSomething()">
-                leave something for athul ♡
-            </button>
+    <input
+        type="email"
+        id="emailInput"
+        placeholder="your email"
+    >
 
-        </section>
+    <input
+        type="password"
+        id="passwordInput"
+        placeholder="your password"
+    >
+
+    <button class="main-button" onclick="login()">
+        enter athulcoded ♡
+    </button>
+
+    <p id="loginMessage"></p>
+
+</section>
 
 
         <!-- YOUR STUFF -->
