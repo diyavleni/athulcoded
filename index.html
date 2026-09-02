@@ -208,7 +208,50 @@
                 </button>
 
             </div>
+<div id="composeArea">
 
+    <textarea
+        id="messageInput"
+        placeholder="type your little yap here..."
+        maxlength="5000">
+    </textarea>
+
+    <div class="type-buttons">
+
+        <button onclick="selectType('note')">
+            🌷 note
+        </button>
+
+        <button onclick="selectType('letter')">
+            💌 letter
+        </button>
+
+    </div>
+
+    <!-- PUT THE NEW PHOTO AREA HERE -->
+    <div id="photoArea" style="display: none;">
+
+        <input
+            type="file"
+            id="photoInput"
+            accept="image/*"
+        >
+
+        <input
+            type="text"
+            id="photoCaption"
+            placeholder="caption? 👀"
+            maxlength="300"
+        >
+
+    </div>
+
+    <!-- THIS STAYS AFTER IT -->
+    <button class="popup-button" onclick="sendCurrentMessage()">
+        send it ♡
+    </button>
+
+</div>
             <button class="popup-button" onclick="sendCurrentMessage()">
                 send it ♡
             </button>
