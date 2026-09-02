@@ -157,19 +157,72 @@ function selectType(type) {
 }
 
 async function sendCurrentMessage() {
-
     const input = document.getElementById("messageInput");
     const content = input.value.trim();
 
+    // PHOTO
+    if (currentType === "photo") {
+        const fileInput = document.getElementById("photoInput");
+        const captionInput = document.getElementById("photoCaption");
+
+        const file = fileInput.files[0];
+
+        if (!file) {
+            alert("choose a photo first bestie 😭📸");
+            return;
+        }
+
+        if (!file.type.startsWith("image/")) {
+            alert("that's not an image 😭");
+            return;
+        }
+
+        const fileName =
+            `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, "_")}`;
+
+        const { error: uploadError } = await supabaseClient
+            .storage
+            .from("photos")
+            .upload(fileName, file);
+
+        if (uploadError) {
+            console.error(uploadError);
+            alert("photo upload failed 😭");
+            return;
+        }
+
+        const caption = captionInput.value.trim();
+
+        const { error: messageError } = await supabaseClient
+            .from("messages")
+            .insert([{
+                sender: "you",
+                type: "photo",
+                content: fileName + (caption ? `|${caption}` : "")
+            }]);
+
+        if (messageError) {
+            console.error(messageError);
+            alert("photo uploaded but message wasn't saved 😭");
+            return;
+        }
+
+        alert("PHOTO SENTTT 📸💌");
+
+        fileInput.value = "";
+        captionInput.value = "";
+        closePopup();
+
+        return;
+    }
+
+    // NOTE / LETTER
     if (!content) {
         alert("ummm... you sent literally nothing 😭");
         return;
     }
 
-    // Change this later when we add the real login
-    const sender = "you";
-
-    await sendMessage(sender, currentType, content);
+    await sendMessage("you", currentType, content);
 
     input.value = "";
     closePopup();
