@@ -84,7 +84,18 @@ function openSection(section) {
             "questionable camera roll content goes here."
         ]
     };
+if (section === "memories") {
+    document.getElementById("photoArea").style.display = "block";
+    document.getElementById("messageInput").style.display = "none";
 
+    showPopup(
+        "📸",
+        "leave a memory for athul",
+        "proof that we existed outside the group chat 💀"
+    );
+
+    return;
+}
     const item = content[section];
 
     if (item) {
